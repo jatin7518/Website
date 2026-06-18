@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EduStream | School Management</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- ========== SIDEBAR ========== -->
+  <aside class="sidebar">
+
+    <div class="logo-section">
+      <div class="logo-placeholder">
+        <img src="https://ramjilalic.in/assets/img/sraga.png" 
+         alt="School Logo" style="
+      width:50px;
+      max-width:50px;
+      height:auto;
+      background:transparent;
+      box-shadow:none;
+      border:none;
+      padding:0;
+      display:block;
+      margin:0 auto;
+    ">
+      </div>
+      <h2>EduStream</h2>
+    </div>
+
+    <!-- USER INFO -->
+    <div class="user-box">
+      <p id="userRole">Welcome</p>
+      <button onclick="logout()">Logout</button>
+    </div>
+
+    <nav>
+  <ul>
+    <li onclick="showPanel('notice-board')"><span class="icon">🏫</span> Notice Board</li>
+    <li onclick="showPanel('student-db')"><span class="icon">👨‍🎓</span> Student Portal</li>
+    <li onclick="showPanel('teacher-db')"><span class="icon">👨‍🏫</span> Teacher Portal</li>
+    <li onclick="showPanel('admin-panel')" data-admin="true"><span class="icon">🛠️</span> Admin Control</li>
+  </ul>
+</nav>
+
+  </aside>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main>
+
+
+    <!-- ===== NOTICE BOARD (DEFAULT) ===== -->
+    <section id="notice-board" class="panel">
+
+      <h1 class="school-heading">
+        Pt. Ramji Lal Inter College
+      </h1>
+
+      <div class="logo-center">
+        <img src="https://ramjilalic.in/assets/img/sraga.png" alt="School Logo">
+      </div>
+
+      <div class="notice-card">
+        <h3>Annual Sports Day 2026</h3>
+        <p>Registration opens next Monday for all track and field events.</p>
+        <span class="date">Jan 30, 2026</span>
+      </div>
+
+    </section>
+
+    <!-- ===== STUDENT PANEL ===== -->
+    <section id="student-db" class="panel">
+      <h1>Student Dashboard</h1>
+
+      <div class="grid-container">
+        <div class="card">
+          <h3>Profile</h3>
+          <p>Name: Student Name</p>
+          <p>Class: 10-B</p>
+        </div>
+
+        <div class="card">
+          <h3>Attendance</h3>
+          <div class="stat">92%</div>
+        </div>
+
+        <div class="card">
+          <h3>Homework</h3>
+          <ul>
+            <li>Math: Exercise 4.2</li>
+            <li>Science: Lab Report</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TEACHER PANEL ===== -->
+    <section id="teacher-db" class="panel">
+      <h1>Teacher Dashboard</h1>
+
+      <div class="action-bar">
+        <button class="btn">Mark Attendance</button>
+        <button class="btn">Send Message</button>
+      </div>
+
+      <div class="message-box">
+        <h3>Recent Message</h3>
+        <p><strong>To Class 10:</strong> Bring geometry box tomorrow.</p>
+      </div>
+    </section>
+
+    <!-- ===== ADMIN / PRINCIPAL PANEL ===== -->
+    <section id="admin-panel" class="panel">
+      <h1>Principal Admin Panel</h1>
+
+      <div class="admin-grid">
+        <div class="control-card">Manage Teachers</div>
+        <div class="control-card">Student Admissions</div>
+        <div class="control-card">Finance Overview</div>
+        <div class="control-card red">System Settings</div>
+      </div>
+
+      <!-- LOGO UPLOAD -->
+      <div class="upload-box">
+        <h3>Upload School Logo</h3>
+        <input type="file" id="imageInput" accept="image/*">
+        <br><br>
+        <img id="previewImage" alt="Preview">
+      </div>
+    </section>
+
+  </main>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

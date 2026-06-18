@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>School Login</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ICONS -->
+<link rel="stylesheet" href="login.css">
+
+
+</head>
+
+<body>
+
+<div class="login-card">
+
+  <!-- LOGO -->
+  <div class="login-logo-center">
+  <img 
+    src="https://ramjilalic.in/assets/img/sraga.png"
+    alt="School Logo"
+    style="
+      width:90px;
+      max-width:90px;
+      height:auto;
+      background:transparent;
+      box-shadow:none;
+      border:none;
+      padding:0;
+      display:block;
+      margin:0 auto;
+    "
+  >
+</div>
+
+
+  <h2>School Login</h2>
+
+  <select id="role">
+    <option value="">Select Role</option>
+    <option value="student">Student</option>
+    <option value="teacher">Teacher</option>
+    <option value="principal">Principal</option>
+    <option vlaue="coder">coder</option>
+  </select>
+  
+  <input id="user" placeholder="Username">
+
+  <div class="pass-box">
+    <input type="password" id="pass" placeholder="Password">
+    <span onclick="togglePass()">Show</span>
+  </div>
+
+
+  <button onclick="login()">Login</button>
+
+  <div class="links">
+    <a href="#" onclick="showOTP()">Login with OTP</a>
+    <a href="#" onclick="alert('Account created by school admin')">Create Account</a>
+  </div>
+
+  <div id="otpBox">
+    <input id="otp" placeholder="Enter OTP (1234)">
+    <button onclick="verifyOTP()">Verify OTP</button>
+  </div>
+
+  <div class="links">
+    <a href="#" onclick="alert('Contact school office')">Forgot Password?</a>
+  </div>
+
+  <div id="msg"></div>
+</div>
+
+<!-- LEFT SOCIAL ICONS -->
+<div class="social-bar">
+  <a href="https://www.youtube.com/@RAMJILALCLASSES" target="_blank" class="yt">
+    <img src="C:\Users\Ainfotech\Downloads\ins.jpg" 
+    alt="HTML " style="width:px20;height:20px;">
+    <i class="fab fa-instagram"></i>
+  </a>
+  
+  <a href="https://www.instagram.com/ptramjilalic/" target="_blank" class="ig">
+    <i class="fab fa-instagram"></i>
+  </a>
+</div>
+
+<!-- RIGHT WHATSAPP SUPPORT -->
+<a href="https://wa.me/917518690141" target="_blank" class="whatsapp-support">
+  <i class="fab fa-whatsapp"></i>
+  Support Team
+</a>
+
+<script>
+function togglePass(){
+  pass.type = pass.type==="password" ? "text" : "password";
+}
+
+function login(){
+  if(role.value==="student" && user.value==="student" && pass.value==="123"){
+    localStorage.setItem("role","student");
+    location="school.html";
+  }
+  else if(role.value==="coder" && user.value==="coder" && pass.value==="7518"){
+    localStorage.setItem("role","coder");
+    location="school.html";
+  }
+  else if(role.value==="teacher" && user.value==="teacher" && pass.value==="123"){
+    localStorage.setItem("role","teacher");
+    location="school.html";
+  }
+  else if(role.value==="principal" && user.value==="admin" && pass.value==="admin123"){
+    localStorage.setItem("role","principal");
+    location="school.html";
+  }
+  else{
+    msg.innerText="❌ Invalid login details";
+  }
+}
+
+function showOTP(){
+  otpBox.style.display="block";
+  msg.innerText="📩 OTP Sent (Demo OTP: 1234)";
+}
+function verifyOTP(){
+  if(otp.value==="1234"){
+    localStorage.setItem("role","student");
+    location="school.html";
+  }else{
+    msg.innerText="❌ Wrong OTP";
+  }
+}
+</script>
+
+
+</body>
+</html>
